@@ -1,27 +1,33 @@
-This is Bhupender Nayak
+# PyTorch Fundamentals: Architecture, Training & MLOps
 
-# PyTorch Training Pipeline: Diabetes Prediction
+This branch contains foundational Machine Learning pipelines built from scratch using PyTorch. It demonstrates the progression from raw tensor manipulation to deploying professional, object-oriented neural network architectures using `torch.nn`.
 
-This repository contains a clean, end-to-end PyTorch training pipeline for binary classification. The model predicts the onset of diabetes based on diagnostic measures using the classic Pima Indians Diabetes Database.
+## 🧠 Core Engineering Concepts Mastered
+Throughout these notebooks, the following Deep Learning principles were successfully implemented:
+* **Custom Architectures:** Building subclasses of `nn.Module` and utilizing `nn.Sequential` for clean, forward-pass pipelines.
+* **The 5-Step Training Loop:** Manual implementation of Gradient Descent (Forward Pass, Loss Calculation, Zero Grad, Backpropagation, Optimizer Step).
+* **Data Leakage Prevention:** Strict separation of training and testing phases using `model.eval()` and `torch.inference_mode()`.
+* **Model Persistence (MLOps):** Safely exporting and importing optimized model weights using `state_dict` and `pathlib` for crash-proof directory management.
+* **Telemetry & Visualization:** Tracking Train vs. Test loss and plotting real-time dimensional data using Scikit-Learn and Matplotlib.
 
-This project serves as a foundational template for structuring modern PyTorch workflows, moving away from raw tensor manipulation to utilizing PyTorch's optimized `torch.nn` modules.
+## 📂 Project Files & Milestones
 
-## 🧠 Key Concepts Demonstrated
+### 1. `DiabetesModel_pytorch.ipynb`
+* **Description:** First project and initial milestone for building diagnostic classification models.
+* **Tech:** Binary classification using `BCEWithLogitsLoss` and Mini-Batch Gradient Descent via `DataLoader`.
 
-* **Custom Neural Networks:** Subclassing `nn.Module` to build a Multi-Layer Perceptron (MLP).
-* **Data Handling:** Using `TensorDataset` and `DataLoader` for efficient Mini-Batch Gradient Descent.
-* **Numerical Stability:** Implementing `BCEWithLogitsLoss` over standard manual Sigmoid + BCELoss for better mathematical stability during backpropagation.
-* **Advanced Optimization:** Utilizing the Adam optimizer (`optim.Adam`) for dynamic learning rate adjustments.
-* **Training Loops:** Structuring professional training and evaluation modes (`model.train()` and `model.eval()`).
+### 2. `Task_1.ipynb`
+* **Description:** Designed a custom `TelemetryClassifier` to predict user active/resting states based on 6-dimensional mock sensor data.
+* **Tech:** Custom Multi-Layer Perceptron (MLP) architecture mapping 6 input features down to a single probability output.
 
-## 📊 Dataset
+### 3. `learnpytorch_io_module_1execrise.ipynb`
+* **Description:** End-to-end linear regression pipeline serving as the final Chapter 1 foundational exercise. 
+* **Tech:** The model successfully learned to replicate a hidden mathematical formula ($y = 0.3x + 0.7$) using pure SGD optimization and Mean Absolute Error (`nn.L1Loss`).
 
-The dataset used is the **Pima Indians Diabetes Dataset**.
-* **Input Features (8):** Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age.
-* **Target (1):** Outcome (0 = No Diabetes, 1 = Diabetes).
+## 🛠️ Tech Stack
+* **Framework:** PyTorch (`torch`, `torch.nn`, `torch.optim`)
+* **Data Manipulation:** Pandas, NumPy
+* **Data Processing & Visualization:** Scikit-Learn (`train_test_split`, `StandardScaler`, `LabelEncoder`), Matplotlib
 
-## 🚀 How to Run
-
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git](https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git)
+---
+*Author: Bhupender Nayak*
